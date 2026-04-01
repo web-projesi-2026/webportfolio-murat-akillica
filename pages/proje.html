@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeler – Murat Akıllıca</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html" class="active">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="vesaire.html">Hizmetler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
+        <a href="login.html" class="btn btn-outline btn-login" style="padding:0.5rem 1.1rem;font-size:0.82rem;">Giriş Yap</a>
+        <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
+          <span class="user-name" style="font-size:0.875rem;font-weight:600;"></span>
+          <button onclick="Auth.logout()" class="btn btn-ghost" style="padding:0.45rem 1rem;font-size:0.8rem;">Çıkış</button>
+        </div>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero__bg" style="position:absolute;inset:0;">
+      <div class="hero__orb hero__orb--1" style="opacity:0.2;"></div>
+      <div class="hero__orb hero__orb--2" style="opacity:0.15;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label">// Çalışmalarım</p>
+      <h1 class="page-hero__title">Projelerim</h1>
+      <p class="page-hero__desc">Geliştirdiğim ve üzerinde çalışmaya devam ettiğim uygulama projeleri.</p>
+    </div>
+  </div>
+
+  <!-- FİLTRE -->
+  <section style="padding:2rem 0 0;">
+    <div class="container">
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;" id="filterBtns">
+        <button class="btn btn-primary filter-btn active" data-filter="all">Tümü</button>
+        <button class="btn btn-ghost filter-btn" data-filter="ios">iOS</button>
+        <button class="btn btn-ghost filter-btn" data-filter="android">Android</button>
+        <button class="btn btn-ghost filter-btn" data-filter="firebase">Firebase</button>
+        <button class="btn btn-ghost filter-btn" data-filter="sqlite">SQLite</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJELER -->
+  <section class="section">
+    <div class="container">
+      <div class="projects-grid" id="projectsGrid">
+
+        <div class="project-card reveal" data-tags="ios sqlite">
+          <div class="project-card__img">[ ]</div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="project-card__tag">Swift</span>
+              <span class="project-card__tag">UIKit</span>
+              <span class="project-card__tag">SQLite</span>
+              <span class="project-card__tag">iOS</span>
+            </div>
+            <h3 class="project-card__title">Görev Yöneticisi</h3>
+            <p class="project-card__desc">SQLite kullanarak yerel depolama destekli iOS görev takip uygulaması. Kategori bazlı filtreleme, öncelik sıralaması ve istatistik ekranı içeriyor.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <span class="badge badge-success">Tamamlandı</span>
+              <span class="badge badge-info">📱 iOS</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;">GitHub</a>
+              <button onclick="openModal('modal-1')" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">Detaylar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-tags="android firebase">
+          <div class="project-card__img">[ ]</div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="project-card__tag">Kotlin</span>
+              <span class="project-card__tag">Firebase</span>
+              <span class="project-card__tag">Android</span>
+            </div>
+            <h3 class="project-card__title">Chat Uygulaması</h3>
+            <p class="project-card__desc">Firebase Realtime Database ve Authentication kullanarak anlık mesajlaşma özellikli Android uygulaması. Profil fotoğrafı ve grup sohbeti desteği.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <span class="badge badge-warning">Devam Ediyor</span>
+              <span class="badge badge-accent">🤖 Android</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;">GitHub</a>
+              <button onclick="openModal('modal-2')" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">Detaylar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-tags="ios">
+          <div class="project-card__img">[ ]</div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="project-card__tag">Swift</span>
+              <span class="project-card__tag">SwiftUI</span>
+              <span class="project-card__tag">REST API</span>
+            </div>
+            <h3 class="project-card__title">Kitap Takip</h3>
+            <p class="project-card__desc">SwiftUI ile geliştirilmiş, Open Library API entegrasyonlu kitap okuma takip uygulaması. Okunmuş / okunacak listesi, puan verme özelliği.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <span class="badge badge-success">Tamamlandı</span>
+              <span class="badge badge-info">📱 iOS</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;">GitHub</a>
+              <button onclick="openModal('modal-3')" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">Detaylar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-tags="android sqlite">
+          <div class="project-card__img">[ ]</div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="project-card__tag">Kotlin</span>
+              <span class="project-card__tag">Room DB</span>
+              <span class="project-card__tag">Android</span>
+            </div>
+            <h3 class="project-card__title">Bütçe Takip</h3>
+            <p class="project-card__desc">Room Database (SQLite üzerine) kullanarak gelir-gider takibi yapan Android uygulaması. Grafik ve raporlama özellikleri.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <span class="badge badge-warning">Planlanan</span>
+              <span class="badge badge-accent">🤖 Android</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;">GitHub</a>
+              <button onclick="openModal('modal-4')" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">Detaylar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-tags="ios firebase">
+          <div class="project-card__img">[ ]</div>
+          <div class="project-card__body">
+            <div class="project-card__tags">
+              <span class="project-card__tag">Swift</span>
+              <span class="project-card__tag">Firebase</span>
+              <span class="project-card__tag">HealthKit</span>
+            </div>
+            <h3 class="project-card__title">Spor Takip</h3>
+            <p class="project-card__desc">HealthKit entegrasyonlu ve Firebase bulut senkronizasyonlu iOS fitness uygulaması. Günlük hedef takibi ve motivasyon bildirimleri.</p>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <span class="badge badge-warning">Planlanan</span>
+              <span class="badge badge-info">📱 iOS</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.8rem;padding:0.5rem 1rem;">GitHub</a>
+              <button onclick="openModal('modal-5')" class="btn btn-ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">Detaylar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL 1 -->
+  <div class="modal-overlay" id="modal-1">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>[ ] Görev Yöneticisi</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">SQLite kullanarak yerel depolama destekli iOS görev takip uygulaması.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <span class="project-card__tag">Swift</span>
+        <span class="project-card__tag">UIKit</span>
+        <span class="project-card__tag">SQLite</span>
+        <span class="project-card__tag">iOS 15+</span>
+      </div>
+      <h4 style="font-size:0.875rem;margin-bottom:0.75rem;color:var(--text-muted);font-family:'Space Mono',monospace;">ÖZELLİKLER</h4>
+      <ul style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;">
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Kategori bazlı görev yönetimi</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Yerel SQLite depolama</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Öncelik sıralaması ve filtreleme</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Bildirim desteği</li>
+      </ul>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;">GitHub'da Gör</a>
+        <button onclick="closeModal('modal-1')" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2 -->
+  <div class="modal-overlay" id="modal-2">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>[ ] Chat Uygulaması</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Firebase ile gerçek zamanlı mesajlaşma Android uygulaması.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <span class="project-card__tag">Kotlin</span>
+        <span class="project-card__tag">Firebase Realtime DB</span>
+        <span class="project-card__tag">Firebase Auth</span>
+      </div>
+      <h4 style="font-size:0.875rem;margin-bottom:0.75rem;color:var(--text-muted);font-family:'Space Mono',monospace;">ÖZELLİKLER</h4>
+      <ul style="display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem;">
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Anlık mesajlaşma</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> E-posta ile kayıt/giriş</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Profil fotoğrafı yükleme</li>
+        <li style="font-size:0.875rem;color:var(--text-secondary);padding-left:1rem;position:relative;"><span style="position:absolute;left:0;color:var(--accent);">▸</span> Online/offline durumu</li>
+      </ul>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;">GitHub'da Gör</a>
+        <button onclick="closeModal('modal-2')" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3 -->
+  <div class="modal-overlay" id="modal-3">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>[ ] Kitap Takip</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">SwiftUI ve Open Library API ile kitap takip iOS uygulaması.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <span class="project-card__tag">Swift</span>
+        <span class="project-card__tag">SwiftUI</span>
+        <span class="project-card__tag">REST API</span>
+        <span class="project-card__tag">iOS 16+</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;">GitHub'da Gör</a>
+        <button onclick="closeModal('modal-3')" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4 -->
+  <div class="modal-overlay" id="modal-4">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>[ ] Bütçe Takip</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">Room Database (SQLite) ile Android bütçe takip uygulaması.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <span class="project-card__tag">Kotlin</span>
+        <span class="project-card__tag">Room DB</span>
+        <span class="project-card__tag">Android</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;">GitHub'da Gör</a>
+        <button onclick="closeModal('modal-4')" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5 -->
+  <div class="modal-overlay" id="modal-5">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>[ ] Spor Takip</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1.5rem;">HealthKit + Firebase entegrasyonlu iOS fitness uygulaması.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <span class="project-card__tag">Swift</span>
+        <span class="project-card__tag">Firebase</span>
+        <span class="project-card__tag">HealthKit</span>
+      </div>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="btn btn-primary" style="flex:1;justify-content:center;">GitHub'da Gör</a>
+        <button onclick="closeModal('modal-5')" class="btn btn-ghost">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Murat Akıllıca</h3>
+          <p>Swift ve Kotlin öğrenerek iOS & Android geliştirme dünyasına adım atan bir geliştiriciyim.</p>
+          <div class="social-links" style="margin-top:1rem;">
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link">🐙</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐦</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="proje.html">Projeler</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Bağlantılar</h4>
+          <ul>
+            <li><a href="https://github.com/muratttcan" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>©2026 Murat Akıllıca</span>
+        <span>Made with ❤️ in Turkey 🇹🇷</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Yukarı çık"><svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15" stroke="white" stroke-width="2.5" fill="none"/></svg></button>
+  <div class="notification"></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Proje filtresi
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.className = 'btn btn-ghost filter-btn';
+        });
+        btn.className = 'btn btn-primary filter-btn active';
+
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.project-card').forEach(card => {
+          const tags = card.getAttribute('data-tags') || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Yap – Murat Akıllıca</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Arka plan efekti -->
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;">
+    <div class="hero__orb hero__orb--1" style="opacity:0.15;"></div>
+    <div class="hero__orb hero__orb--2" style="opacity:0.1;"></div>
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-card" style="position:relative;z-index:1;">
+      <div class="auth-card__header">
+        <div class="auth-card__logo">MA.</div>
+        <h2 class="auth-card__title">Tekrar Hoşgeldiniz!</h2>
+        <p class="auth-card__sub">Hesabınıza giriş yapın</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label class="form-label">E-posta Adresi</label>
+          <input type="email" name="email" class="form-input" placeholder="ornek@mail.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Şifre</label>
+          <div style="position:relative;">
+            <input type="password" name="password" id="passwordInput" class="form-input" placeholder="••••••••" required autocomplete="current-password" style="padding-right:3rem;">
+            <button type="button" onclick="togglePassword()" style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--text-muted);" id="eyeBtn">show</button>
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
+          <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;cursor:pointer;">
+            <input type="checkbox" name="remember" style="accent-color:var(--accent);"> Beni hatırla
+          </label>
+          <a href="#" style="font-size:0.85rem;color:var(--accent);">Şifremi unuttum</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.9rem;">
+          Giriş Yap 
+        </button>
+      </form>
+
+      <div class="auth-divider"><span>veya</span></div>
+
+      <button class="btn btn-ghost" style="width:100%;justify-content:center;" onclick="showNotification('Google ile giriş yakında aktif olacak!','error')">
+        Google Google ile Giriş Yap
+      </button>
+
+      <div class="auth-footer">
+        Hesabınız yok mu? <a href="register.html">Kayıt Olun →</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="notification"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function togglePassword() {
+      const input = document.getElementById('passwordInput');
+      const btn = document.getElementById('eyeBtn');
+      if (input.type === 'password') {
+        input.type = 'text';
+        btn.textContent = 'hide';
+      } else {
+        input.type = 'password';
+        btn.textContent = 'show';
+      }
+    }
+
+    // Zaten giriş yapılmışsa yönlendir
+    if (Auth.isLoggedIn()) {
+      window.location.href = '../index.html';
+    }
+  </script>
+</body>
+</html>
