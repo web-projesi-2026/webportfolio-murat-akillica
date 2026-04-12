@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca Blog – Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://muratakillica.com/pages/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muratakillica.com/pages/blog.html">
+  <meta property="og:title" content="Blog – Murat Akıllıca">
+  <meta property="og:description" content="Murat Akıllıca Blog – Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta property="og:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog – Murat Akıllıca">
+  <meta name="twitter:description" content="Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta name="twitter:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
   <title>Blog – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -25,7 +39,7 @@
       </nav>
       <div class="navbar__actions">
         <button class="theme-toggle" title="Tema değiştir">
-          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
         </button>
         <a href="login.html" class="btn btn-outline btn-login" style="padding:0.5rem 1.1rem;font-size:0.82rem;">Giriş Yap</a>
         <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
@@ -127,7 +141,7 @@
               <label class="form-label">Yorumunuz</label>
               <textarea class="form-textarea" placeholder="Düşüncelerinizi paylaşın..." rows="4"></textarea>
             </div>
-            <button class="btn btn-primary">Yorum Gönder 💬</button>
+            <button class="btn btn-primary">Yorum Gönder <i class="fa-solid fa-comment" style="margin-left:0.35rem;"></i></button>
           </div>
           <div id="loginPrompt">
             <a href="login.html" class="btn btn-primary">Giriş Yap →</a>
@@ -145,8 +159,8 @@
           <h3>Murat Akıllıca</h3>
           <p>Mobil geliştirme öğrencisi & teknoloji meraklısı.</p>
           <div class="social-links" style="margin-top:1rem;">
-            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link">🐙</a>
-            <a href="#" class="social-link">💼</a>
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
         <div class="footer__col">
@@ -171,7 +185,7 @@
       </div>
       <div class="footer__bottom">
         <span>©2026 Murat Akıllıca</span>
-        <span>Made with ❤️ in Turkey 🇹🇷</span>
+        <span>Made in Turkey</span>
       </div>
     </div>
   </footer>
@@ -179,7 +193,7 @@
   <!-- BLOG OKUMA MODALI -->
   <div id="blogModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);backdrop-filter:blur(8px);overflow-y:auto;padding:1.5rem 1rem;">
     <div style="max-width:700px;margin:2rem auto 3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:2rem;position:relative;width:100%;box-sizing:border-box;">
-      <button onclick="closeBlogModal()" style="position:absolute;top:1rem;right:1rem;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;">✕</button>
+      <button onclick="closeBlogModal()" style="position:absolute;top:1rem;right:1rem;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;"><i class="fa-solid fa-xmark"></i></button>
       <div id="blogModalContent"></div>
     </div>
   </div>
