@@ -924,16 +924,17 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  align-items: start;
 }
 
 .skill-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  padding: 1.75rem;
+  padding: 0;
   transition: transform 0.35s var(--ease-spring), border-color 0.3s, box-shadow 0.35s;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .skill-card::before {
@@ -1624,18 +1625,10 @@ ul {
 .reveal {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo);
+  transition: opacity 0.55s var(--ease-expo), transform 0.55s var(--ease-expo);
 }
 
-.reveal.hidden {
-  opacity: 0;
-  transform: translateY(26px);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* reveal animasyon durumları – tek tanım (aşağıda güçlü versiyon yoktur) */
 
 /* ===== LOADING ===== */
 .loading {
@@ -2149,4 +2142,491 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* ===== FEATURE: INTERACTIVE SKILL SHOWCASE ===== */
+.skill-card {
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.skill-card-inner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.skill-card.flipped .skill-card-inner {
+  transform: rotateY(180deg);
+}
+
+.skill-card-front,
+.skill-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.skill-card-front {
+  background: transparent;
+}
+
+.skill-card-back {
+  background: var(--bg-card);
+  border-radius: 16px;
+  transform: rotateY(180deg);
+  justify-content: center;
+  gap: 0.75rem;
+  border: 1px solid var(--accent);
+}
+
+.skill-card-back .skill-back-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.skill-card-back .skill-back-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card-back .skill-back-tag {
+  background: var(--gradient-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.skill-card-back .skill-back-note {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.skill-card-back .skill-flip-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted, var(--text-secondary));
+  opacity: 0.6;
+  margin-top: auto;
+}
+
+.skill-flip-badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 20px;
+  height: 20px;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.skill-card:hover .skill-flip-badge {
+  opacity: 1;
+}
+
+.skill-flip-badge svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* ===== FEATURE: DYNAMIC PROJECT FILTER ===== */
+.filter-section {
+  padding: 2.5rem 0 0;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+  background: var(--gradient-soft);
+}
+
+.filter-tab.active {
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(var(--accent-rgb, 99, 102, 241), 0.35);
+}
+
+.filter-tab__icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.filter-tab__count {
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  min-width: 20px;
+  text-align: center;
+  transition: background 0.25s;
+}
+
+.filter-tab:not(.active) .filter-tab__count {
+  background: var(--gradient-soft);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Kart filtre animasyonu */
+.project-card {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.project-card.filter-hidden {
+  display: none;
+}
+
+.project-card.filter-fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.filter-empty {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
+  color: var(--text-secondary);
+}
+
+.filter-empty.visible {
+  display: block;
+}
+
+.filter-empty-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+  color: var(--text-secondary);
+}
+
+/* ===== FEATURE: ARTICLE READING PROGRESS ===== */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient, linear-gradient(90deg, #6366f1, #a855f7, #ec4899));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+}
+
+#reading-progress::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent, #6366f1);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--accent, #6366f1);
+}
+
+/* skill-card padding artık front/back'te */
+.skill-card-front {
+  padding: 1.75rem;
+}
+
+/* Flip inner tam kart boyutunu kaplar */
+.skill-card > .skill-card-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* flip badge z-index fix */
+.skill-card > .skill-flip-badge {
+  z-index: 3;
+}
+
+/* ===================================================
+   YENİ ETKİLEŞİM 1: TOOLTIP
+   =================================================== */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  letter-spacing: 0.3px;
+}
+
+[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  border: 5px solid transparent;
+  border-top-color: var(--border);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9000;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===================================================
+   YENİ ETKİLEŞİM 2: RIPPLE (Dalga) BUTONU
+   =================================================== */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-wave {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  margin-left: -5px;
+  pointer-events: none;
+  animation: ripple-expand 0.55s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes ripple-expand {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(30); opacity: 0; }
+}
+
+/* ===================================================
+   YENİ ETKİLEŞİM 3: TYPEWRITER HERO BAŞLIĞI
+   =================================================== */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--accent);
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Stack tag hover glow */
+.stack-tag {
+  transition: box-shadow 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.stack-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.35);
+}
+
+/* ===================================================
+   UI DÜZELTME: Skill card içindeki flip-badge çakışması
+   =================================================== */
+.skill-card:not(:has(.skill-card-inner)) .skill-flip-badge {
+  display: none;
+}
+
+/* Flip kartlarda padding tekrarını önle */
+.skill-card:has(.skill-card-inner) {
+  padding: 0;
+  overflow: hidden;
+  height: 220px;
+}
+
+/* Skill card hover: flip olanlar tilt'i devre dışı bırakır */
+.skill-card.flipped {
+  transform: none !important;
+}
+
+/* ===================================================
+   UI DÜZELTME: Navbar üstünde reading progress çakışması
+   =================================================== */
+#reading-progress {
+  z-index: 1100;
+}
+
+/* ===================================================
+   UI DÜZELTME: Notification z-index
+   =================================================== */
+.notification {
+  z-index: 10000;
+}
+
+/* ===================================================
+   UI DÜZELTME: Back-to-top reading progress ile çakışma
+   =================================================== */
+.back-to-top {
+  z-index: 1050;
+}
+
+/* ===================================================
+   UI DÜZELTME: Mobile hamburger menü overflow
+   =================================================== */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ===================================================
+   UI DÜZELTME: Proje kartı tilt + filter-hidden çakışması
+   =================================================== */
+.project-card.filter-hidden {
+  display: none !important;
+  transform: none !important;
+}
+
+/* ===================================================
+   UI DÜZELTME: Code window cursor animasyonu
+   =================================================== */
+.code-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-left: 2px;
+  border-radius: 1px;
+  animation: cursor-blink 0.9s step-end infinite;
+}
+
+/* ===================================================
+   Reveal animasyon durumları – tek ve kesin tanım
+   =================================================== */
+.reveal.hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s var(--ease-expo), transform 0.55s var(--ease-expo);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================================
+   UI DÜZELTME: Stat badge konumlandırma
+   =================================================== */
+.stat-badge {
+  z-index: 5;
+}
+
+/* ===================================================
+   YENİ ETKİLEŞİM EKLEMELERİ
+   =================================================== */
+
+/* Etiket tıklanabilirlik göstergesi */
+.project-card__tag {
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.project-card__tag:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Klavye kısayolu ipucu – footer veya herhangi bir yerde gösterilebilir */
+.kbd-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+kbd {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+}
+
+/* Mobil swipe ipucu animasyonu */
+@keyframes swipe-hint {
+  0%   { transform: translateX(0); opacity: 0.6; }
+  50%  { transform: translateX(-8px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.6; }
+}
+.swipe-hint-icon {
+  animation: swipe-hint 2s ease-in-out infinite;
 }
