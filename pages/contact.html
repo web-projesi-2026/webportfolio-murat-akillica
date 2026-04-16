@@ -229,7 +229,10 @@
   <script>
     function showFormMsg(msg, ok) {
       const el = document.getElementById('formNotification');
-      el.textContent = msg;
+      const icon = ok
+        ? '<i class="fa-solid fa-circle-check" style="margin-right:0.5rem;"></i>'
+        : '<i class="fa-solid fa-circle-xmark" style="margin-right:0.5rem;"></i>';
+      el.innerHTML = icon + msg;
       el.style.display = 'block';
       el.style.background = ok ? 'rgba(34,197,94,0.1)' : 'rgba(232,67,147,0.1)';
       el.style.borderColor = ok ? 'rgba(34,197,94,0.35)' : 'rgba(232,67,147,0.35)';
@@ -255,18 +258,18 @@
           try {
             const res = JSON.parse(text);
             if (res.success) {
-              showFormMsg('✓ Mesajınız gönderildi! En kısa sürede yanıt vereceğim.', true);
+              showFormMsg('Mesajınız gönderildi! En kısa sürede yanıt vereceğim.', true);
               form.reset();
             } else {
-              showFormMsg('✗ ' + (res.message || 'Hata oluştu.'), false);
+              showFormMsg(res.message || 'Hata oluştu.', false);
             }
           } catch (err) {
             console.error('PHP yanıtı:', text);
-            showFormMsg('✗ Sunucu hatası. Konsolu kontrol et.', false);
+            showFormMsg('Sunucu hatası. Konsolu kontrol et.', false);
           }
         })
         .catch(() => {
-          showFormMsg('✗ Sunucuya bağlanılamadı. XAMPP çalışıyor mu?', false);
+          showFormMsg('Sunucuya bağlanılamadı. XAMPP çalışıyor mu?', false);
         })
         .finally(() => {
           btn.textContent = orig;

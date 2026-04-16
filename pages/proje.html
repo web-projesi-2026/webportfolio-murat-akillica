@@ -63,15 +63,47 @@
     </div>
   </div>
 
-  <!-- FİLTRE -->
-  <section style="padding:2rem 0 0;">
+  <!-- Klavye ipucu – masaüstü -->
+  <div class="container" style="padding-top:0.5rem;padding-bottom:0;">
+    <p class="kbd-hint" style="justify-content:flex-end;">
+      <span>Kısayol:</span>
+      <kbd>T</kbd><span>Tema</span>
+      <span style="margin-left:0.5rem;"></span>
+      <kbd>Esc</kbd><span>Kapat</span>
+      <span style="margin-left:0.5rem;"></span>
+      <kbd>G</kbd><span>Yukarı</span>
+    </p>
+  </div>
+
+  <!-- FİLTRE TABS (Commit 2) -->
+  <section class="filter-section">
     <div class="container">
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;" id="filterBtns">
-        <button class="btn btn-primary filter-btn active" data-filter="all">Tümü</button>
-        <button class="btn btn-ghost filter-btn" data-filter="ios">iOS</button>
-        <button class="btn btn-ghost filter-btn" data-filter="android">Android</button>
-        <button class="btn btn-ghost filter-btn" data-filter="firebase">Firebase</button>
-        <button class="btn btn-ghost filter-btn" data-filter="sqlite">SQLite</button>
+      <div class="filter-tabs" id="filterBtns" role="tablist" aria-label="Proje kategorileri">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+          <span class="filter-tab__icon"><i class="fa-solid fa-layer-group"></i></span>
+          <span class="filter-tab__label">Tümü</span>
+          <span class="filter-tab__count" id="count-all">0</span>
+        </button>
+        <button class="filter-tab" data-filter="ios" role="tab" aria-selected="false">
+          <span class="filter-tab__icon"><i class="fa-brands fa-apple"></i></span>
+          <span class="filter-tab__label">iOS</span>
+          <span class="filter-tab__count" id="count-ios">0</span>
+        </button>
+        <button class="filter-tab" data-filter="android" role="tab" aria-selected="false">
+          <span class="filter-tab__icon"><i class="fa-brands fa-android"></i></span>
+          <span class="filter-tab__label">Android</span>
+          <span class="filter-tab__count" id="count-android">0</span>
+        </button>
+        <button class="filter-tab" data-filter="firebase" role="tab" aria-selected="false">
+          <span class="filter-tab__icon"><i class="fa-solid fa-database"></i></span>
+          <span class="filter-tab__label">Firebase</span>
+          <span class="filter-tab__count" id="count-firebase">0</span>
+        </button>
+        <button class="filter-tab" data-filter="sqlite" role="tab" aria-selected="false">
+          <span class="filter-tab__icon"><i class="fa-solid fa-server"></i></span>
+          <span class="filter-tab__label">SQLite</span>
+          <span class="filter-tab__count" id="count-sqlite">0</span>
+        </button>
       </div>
     </div>
   </section>
@@ -348,26 +380,5 @@
   <div class="notification"></div>
 
   <script src="../assets/js/main.js"></script>
-  <script>
-    // Proje filtresi
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.className = 'btn btn-ghost filter-btn';
-        });
-        btn.className = 'btn btn-primary filter-btn active';
-
-        const filter = btn.getAttribute('data-filter');
-        document.querySelectorAll('.project-card').forEach(card => {
-          const tags = card.getAttribute('data-tags') || '';
-          if (filter === 'all' || tags.includes(filter)) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
