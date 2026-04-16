@@ -159,10 +159,53 @@
   }
 }
 
+/* ===== SKILL CARD FLIP - MOBILE ===== */
+@media (max-width: 768px) {
+  .skill-card:has(.skill-card-inner) {
+    height: auto;
+    min-height: 220px;
+  }
+
+  .skill-card-inner {
+    height: 220px;
+  }
+
+  /* Mobilde hover yerine tıkla ipucu göster */
+  .skill-card:has(.skill-card-inner)::after {
+    content: 'Detay için dokun';
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.75rem;
+    font-size: 0.65rem;
+    color: var(--text-muted, rgba(255,255,255,0.35));
+    font-family: var(--font-mono);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .skill-card.flipped::after {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
+  /* Navbar */
+  .navbar__inner {
+    padding: 0.875rem 1rem;
+  }
+
+  .navbar__logo {
+    font-size: 1.25rem;
+  }
+
+  /* Hero */
   .hero__title {
     font-size: 2rem;
     letter-spacing: -0.03em;
+  }
+
+  .hero__desc {
+    font-size: 0.95rem;
   }
 
   .hero__actions {
@@ -175,17 +218,92 @@
     justify-content: center;
   }
 
-  .stats-row {
-    gap: 1.5rem;
+  .hero__stack {
+    justify-content: center;
   }
 
-  .navbar__inner {
-    padding: 0.875rem 1.25rem;
+  .stats-row {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Genel */
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section {
+    padding: 2.75rem 0;
   }
 
   .btn {
     padding: 0.65rem 1.25rem;
     font-size: 0.78rem;
+  }
+
+  /* Başlıklar */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .page-hero__title {
+    font-size: 2rem;
+  }
+
+  /* Kartlar */
+  .skill-card,
+  .blog-card {
+    padding: 1.25rem;
+  }
+
+  .project-card__body {
+    padding: 1.1rem;
+  }
+
+  .project-card__thumb {
+    height: 150px;
+  }
+
+  /* Auth */
+  .auth-page {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem 1.1rem;
+  }
+
+  /* Footer */
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Gradient alan */
+  .gradient-bg {
+    padding: 1.5rem 1.1rem;
+  }
+
+  /* Admin tablo yatay kaydırma */
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 1.25rem;
+    border-radius: 14px;
+  }
+
+  /* Yüzen rozetler küçük ekranda gizle */
+  .stat-badge--1,
+  .stat-badge--2 {
+    display: none;
   }
 }
 
