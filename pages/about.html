@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca hakkında – Mobil uygulama geliştirici, Swift ve Kotlin uzmanı. Eğitim, deneyim ve kişisel hikaye.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://muratakillica.com/pages/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muratakillica.com/pages/about.html">
+  <meta property="og:title" content="Hakkımda – Murat Akıllıca">
+  <meta property="og:description" content="Murat Akıllıca hakkında – Mobil uygulama geliştirici, Swift ve Kotlin uzmanı. Eğitim, deneyim ve kişisel hikaye.">
+  <meta property="og:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hakkımda – Murat Akıllıca">
+  <meta name="twitter:description" content="Murat Akıllıca hakkında – Mobil uygulama geliştirici, Swift ve Kotlin uzmanı.">
+  <meta name="twitter:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <title>Hakkımda – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html" class="active">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="vesaire.html">Hizmetler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+          <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <a href="login.html" class="btn btn-outline btn-login" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Giriş Yap</a>
+        <a href="register.html" class="btn btn-primary btn-register" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Kayıt Ol</a>
+        <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
+          <div class="user-info-badge"><div class="user-avatar"></div><span class="user-name" style="font-family:var(--font-mono);font-size:0.78rem;"></span></div>
+          <button onclick="Auth.logout()" class="btn btn-ghost" style="padding:0.45rem 1rem;font-size:0.8rem;"><i class="fa-solid fa-right-from-bracket" style="margin-right:0.3rem;"></i>Çıkış</button>
+        </div>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero__bg" style="position:absolute;inset:0;">
+      <div class="hero__orb hero__orb--1" style="opacity:0.2;"></div>
+      <div class="hero__orb hero__orb--2" style="opacity:0.15;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label">// Benim Hikayem</p>
+      <h1 class="page-hero__title">Hakkımda</h1>
+      <p class="page-hero__desc">Mobil geliştirme dünyasına adım atan bir öğrenci geliştiricinin yolculuğu.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal">
+          <div class="about-img">
+            <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:1.5rem;">
+              <div style="width:100%;max-width:340px;border-radius:12px;overflow:hidden;border:1px solid rgba(108,92,231,0.3);box-shadow:0 24px 64px rgba(0,0,0,0.6);font-family:var(--font-mono);">
+                <div style="background:#1e1e2e;padding:0.6rem 1rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+                  <span style="width:12px;height:12px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+                  <span style="width:12px;height:12px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+                  <span style="width:12px;height:12px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+                  <span style="margin-left:0.5rem;font-size:0.7rem;color:#666;flex:1;text-align:center;">ContentView.swift</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4e9de0" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+                </div>
+                <div style="background:#13131f;padding:1rem 0.75rem;font-size:0.7rem;line-height:1.9;">
+                  <div><span style="color:#5c6370;">1</span>&nbsp;&nbsp;<span style="color:#c678dd;">import</span> <span style="color:#e5c07b;">SwiftUI</span></div>
+                  <div><span style="color:#5c6370;">2</span>&nbsp;&nbsp;</div>
+                  <div><span style="color:#5c6370;">3</span>&nbsp;&nbsp;<span style="color:#c678dd;">struct</span> <span style="color:#e5c07b;">ContentView</span><span style="color:#abb2bf;">: </span><span style="color:#e5c07b;">View</span> <span style="color:#abb2bf;">{</span></div>
+                  <div><span style="color:#5c6370;">4</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#c678dd;">var</span> <span style="color:#abb2bf;">body</span><span style="color:#abb2bf;">: </span><span style="color:#c678dd;">some</span> <span style="color:#e5c07b;">View</span> <span style="color:#abb2bf;">{</span></div>
+                  <div><span style="color:#5c6370;">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#e5c07b;">VStack</span><span style="color:#abb2bf;">(spacing: </span><span style="color:#d19a66;">16</span><span style="color:#abb2bf;">) {</span></div>
+                  <div><span style="color:#5c6370;">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#e5c07b;">Text</span><span style="color:#abb2bf;">(</span><span style="color:#98c379;">"Merhaba 👋"</span><span style="color:#abb2bf;">)</span></div>
+                  <div class="xcode-typing-line"><span style="color:#5c6370;">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#abb2bf;">.</span><span style="color:#61afef;">font</span><span style="color:#abb2bf;">(.</span><span style="color:#d19a66;">largeTitle</span><span style="color:#abb2bf;">)</span><span class="xcode-cursor">|</span></div>
+                  <div><span style="color:#5c6370;">8</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#e5c07b;">Text</span><span style="color:#abb2bf;">(</span><span style="color:#98c379;">"Ben Murat"</span><span style="color:#abb2bf;">)</span></div>
+                  <div><span style="color:#5c6370;">9</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#abb2bf;">}</span></div>
+                  <div><span style="color:#5c6370;">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#abb2bf;">}</span></div>
+                  <div><span style="color:#5c6370;">11</span>&nbsp;&nbsp;<span style="color:#abb2bf;">}</span></div>
+                </div>
+                <div style="background:#1a1a2e;padding:0.4rem 1rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,0.04);">
+                  <span style="font-size:0.6rem;color:#4e9de0;"><i class="fa-solid fa-check"></i> Build Succeeded</span>
+                  <span style="font-size:0.6rem;color:#5c6370;">iOS 17.0 · iPhone 15</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-accent-card">
+            <div style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--text-muted);">Durum</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-top:0.2rem;">
+              <span style="color:#22c55e;">●</span> Aktif Öğreniyor
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="section-label" style="text-align:left;">// Kim Olduğum</p>
+          <h2 class="section-title" style="text-align:left;margin-bottom:1.25rem;">
+            Merhaba! Ben <span class="accent">Murat</span>
+          </h2>
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;font-size:1rem;">
+            Yaklaşık 1 yıldır <strong style="color:var(--text-primary);">Swift</strong> ve <strong style="color:var(--text-primary);">Kotlin</strong> öğrenerek
+            mobil uygulama geliştirme dünyasına adım atıyorum. Her gün yeni şeyler öğrenmekten büyük keyif alıyorum.
+          </p>
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;font-size:1rem;">
+            iOS için Xcode ve SwiftUI, Android için Android Studio ve Jetpack Compose ile çalışıyorum.
+            <strong style="color:var(--text-primary);">Firebase</strong> ve <strong style="color:var(--text-primary);">SQLite</strong> gibi
+            veritabanı teknolojilerini de öğrenmeyi hedefliyorum.
+          </p>
+          <p style="color:var(--text-secondary);margin-bottom:2rem;font-size:1rem;">
+            Gerçek projeler yaparak öğrenmeye inandığım için mümkün olduğunca pratiğe odaklanıyorum.
+            Kullanıcı deneyimini ön planda tutarak tasarım ile teknik bilgiyi harmanlayan uygulamalar geliştirmeyi hedefliyorum.
+          </p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">İletişime Geç <i class="fa-solid fa-envelope" style="margin-left:0.35rem;"></i></a>
+            <a href="proje.html" class="btn btn-outline">Projelerimi Gör</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BECERİLER -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">// Teknoloji Stack</p>
+        <h2 class="section-title">Beceri <span class="accent">Seviyelerim</span></h2>
+      </div>
+      <div style="max-width:600px;margin:0 auto;" class="reveal">
+        <div class="progress-list">
+
+          <!-- Swift -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#f7971e,#ffd200);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20.94 8.89c-.36-3.41-3.07-6.12-6.5-6.5C11.13 2.04 8.1 3.8 6.77 6.5 4.17 7.15 2 9.27 2 12c0 3.31 2.69 6 6 6h11c2.76 0 5-2.24 5-5 0-2.33-1.6-4.3-3.06-4.11z"/></svg>
+                </span>
+                Swift
+              </span>
+              <span class="progress-pct">65%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="65%"></div></div>
+          </div>
+
+          <!-- Kotlin -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#7F52FF,#C811E1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M2 2l10 10L2 22h4l8-8 8 8h4L12 12 22 2h-4l-8 8-8-8z"/></svg>
+                </span>
+                Kotlin
+              </span>
+              <span class="progress-pct">60%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="60%"></div></div>
+          </div>
+
+          <!-- Firebase -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#F5820D,#FFA000);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M3.89 15.67L6.6 2.3a.5.5 0 01.97.06l1.65 6.47 1.43-2.69a.5.5 0 01.9.01L20.11 15.67A9 9 0 013.89 15.67z"/></svg>
+                </span>
+                Firebase
+              </span>
+              <span class="progress-pct">45%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="45%"></div></div>
+          </div>
+
+          <!-- SQLite -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#00b4db,#0083b0);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                </span>
+                SQLite
+              </span>
+              <span class="progress-pct">50%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="50%"></div></div>
+          </div>
+
+          <!-- HTML/CSS/JS -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#e44d26,#f16529);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>
+                </span>
+                HTML / CSS / JS
+              </span>
+              <span class="progress-pct">70%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="70%"></div></div>
+          </div>
+
+          <!-- Git / GitHub -->
+          <div class="progress-item">
+            <div class="progress-header">
+              <span class="progress-label" style="display:flex;align-items:center;gap:0.6rem;">
+                <span style="width:28px;height:28px;background:linear-gradient(135deg,#24292e,#444d56);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </span>
+                Git / GitHub
+              </span>
+              <span class="progress-pct">55%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" data-width="55%"></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZAMAN ÇİZGİSİ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">// Yolculuğum</p>
+        <h2 class="section-title">Öğrenme <span class="accent">Sürecim</span></h2>
+      </div>
+      <div style="max-width:650px;margin:0 auto;" class="reveal">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-item__date">Ocak 2025</div>
+            <div class="timeline-item__title">Mobil Geliştirmeye İlk Adım</div>
+            <div class="timeline-item__desc">Swift'i öğrenmeye başladım. Xcode kurulumu, ilk "Hello World" uygulaması ve temel Swift sözdizimi.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__date">Mart 2025</div>
+            <div class="timeline-item__title">UIKit ile İlk Uygulama</div>
+            <div class="timeline-item__desc">UIKit kullanarak ilk gerçek iOS uygulamam olan görev yöneticisini tamamladım. SQLite entegrasyonu yaptım.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__date">Haziran 2025</div>
+            <div class="timeline-item__title">Kotlin ve Android'e Geçiş</div>
+            <div class="timeline-item__desc">Android Studio kurulumu ve Kotlin öğrenmeye başladım. İki platform arasındaki farklılıkları keşfettim.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__date">Eylül 2025</div>
+            <div class="timeline-item__title">Firebase Entegrasyonu</div>
+            <div class="timeline-item__desc">Firebase Authentication ve Realtime Database kullanarak anlık mesajlaşma uygulaması geliştirdim.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__date">2026 – Devam Ediyor</div>
+            <div class="timeline-item__title">SwiftUI & Jetpack Compose</div>
+            <div class="timeline-item__desc">Modern deklaratif UI framework'lerini öğreniyorum. Her gün yeni bir şey keşfediyorum!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEDEFLER -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">// Gelecek Planları</p>
+        <h2 class="section-title">2026 <span class="accent">Hedeflerim</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="card reveal">
+          <div style="font-size:2rem;margin-bottom:1rem;">–</div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">App Store'da Yayınlamak</h3>
+          <p style="font-size:0.875rem;color:var(--text-secondary);">Geliştirdiğim iOS uygulamasını App Store'da yayınlamayı hedefliyorum.</p>
+        </div>
+        <div class="card reveal">
+          <div style="font-size:2rem;margin-bottom:1rem;">–</div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">Cross-Platform Geliştirme</h3>
+          <p style="font-size:0.875rem;color:var(--text-secondary);">Flutter veya React Native öğrenerek tek kod tabanından hem iOS hem Android uygulama geliştirmek.</p>
+        </div>
+        <div class="card reveal">
+          <div style="font-size:2rem;margin-bottom:1rem;">–</div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">REST API Entegrasyonu</h3>
+          <p style="font-size:0.875rem;color:var(--text-secondary);">Uygulamalarda harici API'ları etkin şekilde kullanmayı ve backend entegrasyonunu derinleştirmeyi öğrenmek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Murat Akıllıca</h3>
+          <p>Swift ve Kotlin öğrenerek iOS & Android geliştirme dünyasına adım atan bir geliştiriciyim.</p>
+          <div class="social-links" style="margin-top:1rem;">
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="proje.html">Projeler</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Bağlantılar</h4>
+          <ul>
+            <li><a href="https://github.com/muratttcan" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>©2026 Murat Akıllıca — Tüm Hakları Saklıdır</span>
+        <span>Made in Turkey</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Yukarı çık"><svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15" stroke="white" stroke-width="2.5" fill="none"/></svg></button>
+  <div class="notification"></div>
+  <script src="../assets/js/main.js"></script>
+  <style>
+    .xcode-cursor {
+      display: inline-block;
+      color: #528bff;
+      font-weight: 100;
+      animation: xcodeBlink 1s step-end infinite;
+      margin-left: 1px;
+    }
+    @keyframes xcodeBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</body>
+</html>
