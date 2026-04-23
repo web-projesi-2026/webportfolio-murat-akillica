@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel – Murat Akıllıca</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA. Admin</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">← Siteye Dön</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <button onclick="Auth.logout()" class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.82rem;">Çıkış</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <h4>İçerik</h4>
+      <a href="#" class="admin-nav-link active" onclick="showPanel('blog')">Blog Yazıları</a>
+      <a href="#" class="admin-nav-link" onclick="showPanel('projects')">Projeler</a>
+      <a href="#" class="admin-nav-link" onclick="showPanel('messages')">Mesajlar</a>
+
+      <h4>Kullanıcılar</h4>
+      <a href="#" class="admin-nav-link" onclick="showPanel('users')">Kullanıcılar</a>
+
+      <h4>Sistem</h4>
+      <a href="../index.html" class="admin-nav-link">Siteyi Gör</a>
+    </aside>
+
+    <!-- İÇERİK -->
+    <main class="admin-content">
+
+      <!-- BLOG PANELİ -->
+      <div id="panel-blog">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+          <div>
+            <h1 style="font-size:1.6rem;margin-bottom:0.25rem;">Blog Yazıları</h1>
+            <p style="color:var(--text-secondary);font-size:0.875rem;">Tüm blog yazılarını yönetin.</p>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('modal-new-post')">+ Yeni Yazı</button>
+        </div>
+
+        <div class="card">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Başlık</th>
+                <th>Kategori</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody id="blogTableBody">
+              <tr>
+                <td>1</td>
+                <td>Swift ile İlk iOS Uygulamamı Yaparken Öğrendiklerim</td>
+                <td><span class="blog-card__category">Swift</span></td>
+                <td><span style="font-family:'Space Mono',monospace;font-size:0.8rem;">Ocak 2026</span></td>
+                <td><span class="badge badge-success">Yayında</span></td>
+                <td>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;">Düzenle</button>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;color:var(--accent-2);">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Firebase vs SQLite: Mobil Uygulamalarda Doğru Seçim</td>
+                <td><span class="blog-card__category">Veritabanı</span></td>
+                <td><span style="font-family:'Space Mono',monospace;font-size:0.8rem;">Aralık 2025</span></td>
+                <td><span class="badge badge-success">Yayında</span></td>
+                <td>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;">Düzenle</button>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;color:var(--accent-2);">Sil</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Kotlin ile Android Geliştirmeye Başlamak</td>
+                <td><span class="blog-card__category">Kotlin</span></td>
+                <td><span style="font-family:'Space Mono',monospace;font-size:0.8rem;">Kasım 2025</span></td>
+                <td><span class="badge badge-warning">Taslak</span></td>
+                <td>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;">Düzenle</button>
+                  <button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;color:var(--accent-2);">Sil</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- PROJELER PANELİ -->
+      <div id="panel-projects" style="display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+          <h1 style="font-size:1.6rem;">Projeler</h1>
+          <button class="btn btn-primary">+ Yeni Proje</button>
+        </div>
+        <div class="card">
+          <table class="admin-table">
+            <thead>
+              <tr><th>#</th><th>Proje Adı</th><th>Teknolojiler</th><th>Durum</th><th>İşlemler</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Görev Yöneticisi</td>
+                <td><span class="tag" style="font-size:0.7rem;">Swift, SQLite</span></td>
+                <td><span class="badge badge-success">Tamamlandı</span></td>
+                <td><button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;">Düzenle</button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Chat Uygulaması</td>
+                <td><span class="tag" style="font-size:0.7rem;">Kotlin, Firebase</span></td>
+                <td><span class="badge badge-warning">Devam Ediyor</span></td>
+                <td><button class="btn btn-ghost" style="padding:0.3rem 0.7rem;font-size:0.8rem;">Düzenle</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- MESAJLAR PANELİ -->
+      <div id="panel-messages" style="display:none;">
+        <h1 style="font-size:1.6rem;margin-bottom:2rem;">Gelen Mesajlar</h1>
+        <div class="card">
+          <table class="admin-table">
+            <thead>
+              <tr><th>#</th><th>Gönderen</th><th>E-posta</th><th>Konu</th><th>Tarih</th><th>Durum</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Ahmet Yılmaz</td>
+                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f8f1f4fcedd9f4f8f0f5b7faf6f4">[email&#160;protected]</a></td>
+                <td>İşbirliği Teklifi</td>
+                <td style="font-family:'Space Mono',monospace;font-size:0.8rem;">08.03.2026</td>
+                <td><span class="badge badge-info">Yeni</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="text-align:center;color:var(--text-muted);padding:2rem;font-size:0.875rem;">
+            Gerçek mesajlar MySQL veritabanından yüklenecektir.
+          </p>
+        </div>
+      </div>
+
+      <!-- KULLANICILAR PANELİ -->
+      <div id="panel-users" style="display:none;">
+        <h1 style="font-size:1.6rem;margin-bottom:2rem;">Kullanıcılar</h1>
+        <div class="card">
+          <table class="admin-table">
+            <thead>
+              <tr><th>#</th><th>Ad Soyad</th><th>E-posta</th><th>Rol</th><th>Kayıt Tarihi</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Murat Akıllıca</td>
+                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c41595e4d584d47454040454f4d6c4b414d4540024f4341">[email&#160;protected]</a></td>
+                <td><span class="badge badge-accent">Admin</span></td>
+                <td style="font-family:'Space Mono',monospace;font-size:0.8rem;">01.01.2026</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="text-align:center;color:var(--text-muted);padding:2rem;font-size:0.875rem;">
+            Gerçek kullanıcılar MySQL veritabanından yüklenecektir.
+          </p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- YENİ YAZI MODAL -->
+  <div class="modal-overlay" id="modal-new-post">
+    <div class="modal" style="max-width:600px;">
+      <div class="modal-header">
+        <h3>Yeni Blog Yazısı</h3>
+        <button class="modal-close">×</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Başlık</label>
+        <input type="text" class="form-input" placeholder="Yazı başlığı...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Kategori</label>
+        <select class="form-select">
+          <option>Swift</option>
+          <option>Kotlin</option>
+          <option>Firebase</option>
+          <option>Veritabanı</option>
+          <option>Genel</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Özet</label>
+        <textarea class="form-textarea" placeholder="Kısa özet..." rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">İçerik</label>
+        <textarea class="form-textarea" placeholder="Blog yazısı içeriği..." rows="8"></textarea>
+      </div>
+      <div style="display:flex;gap:0.75rem;">
+        <button class="btn btn-primary" onclick="showNotification('Yazı kaydedildi! (Demo – PHP backend bağlayınız)','success');closeModal('modal-new-post')">
+          Kaydet & Yayınla 
+        </button>
+        <button onclick="closeModal('modal-new-post')" class="btn btn-ghost">İptal</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="notification"></div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/js/main.js"></script>
+  <script>
+    // Admin kontrolü
+    const user = Auth.getUser();
+    if (!user) {
+      showNotification('Admin paneline erişmek için giriş yapmanız gerekiyor.', 'error');
+      setTimeout(() => window.location.href = '../pages/login.html', 1500);
+    }
+
+    function showPanel(name) {
+      ['blog', 'projects', 'messages', 'users'].forEach(p => {
+        document.getElementById('panel-' + p).style.display = p === name ? '' : 'none';
+      });
+      document.querySelectorAll('.admin-nav-link').forEach(l => l.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
