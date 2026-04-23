@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca Hizmetler – Mobil uygulama geliştirme, UI/UX tasarım ve danışmanlık hizmetleri.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://muratakillica.com/pages/vesaire.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muratakillica.com/pages/vesaire.html">
+  <meta property="og:title" content="Hizmetler – Murat Akıllıca">
+  <meta property="og:description" content="Mobil uygulama geliştirme, UI/UX tasarım ve danışmanlık hizmetleri.">
+  <meta property="og:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hizmetler – Murat Akıllıca">
+  <meta name="twitter:description" content="Mobil uygulama geliştirme, UI/UX tasarım ve danışmanlık hizmetleri.">
+  <meta name="twitter:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <title>Hizmetler – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="vesaire.html" class="active">Hizmetler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <a href="login.html" class="btn btn-outline btn-login" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Giriş Yap</a>
+        <a href="register.html" class="btn btn-primary btn-register" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Kayıt Ol</a>
+        <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
+          <div class="user-info-badge"><div class="user-avatar"></div><span class="user-name" style="font-family:var(--font-mono);font-size:0.78rem;"></span></div>
+          <button onclick="Auth.logout()" class="btn btn-ghost" style="padding:0.45rem 1rem;font-size:0.8rem;"><i class="fa-solid fa-right-from-bracket" style="margin-right:0.3rem;"></i>Çıkış</button>
+        </div>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero__bg" style="position:absolute;inset:0;">
+      <div class="hero__orb hero__orb--1" style="opacity:0.2;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label">// Neler Yapabiliyorum</p>
+      <h1 class="page-hero__title">Hizmetler</h1>
+      <p class="page-hero__desc">Sunabileceğim hizmetler ve uzmanlık alanlarım.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">iOS Uygulama Geliştirme</h3>
+          <p class="service-desc">Swift ve SwiftUI/UIKit kullanarak iPhone ve iPad uygulamaları geliştiriyorum.</p>
+          <ul class="service-list">
+            <li>UIKit tabanlı uygulamalar</li>
+            <li>SwiftUI modern arayüzler</li>
+            <li>SQLite/CoreData entegrasyonu</li>
+            <li>Firebase bağlantısı</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">Android Uygulama Geliştirme</h3>
+          <p class="service-desc">Kotlin ile Android Studio üzerinde mobil uygulamalar geliştiriyorum.</p>
+          <ul class="service-list">
+            <li>Kotlin tabanlı uygulamalar</li>
+            <li>Jetpack Compose UI</li>
+            <li>Room Database entegrasyonu</li>
+            <li>Firebase Authentication</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">Firebase Entegrasyonu</h3>
+          <p class="service-desc">Uygulamalarınıza Firebase servislerini entegre ediyorum.</p>
+          <ul class="service-list">
+            <li>Realtime Database</li>
+            <li>Authentication (Giriş/Kayıt)</li>
+            <li>Cloud Firestore</li>
+            <li>Push Notifications</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">Yerel Veritabanı</h3>
+          <p class="service-desc">SQLite ve Room Database ile offline çalışan uygulamalar.</p>
+          <ul class="service-list">
+            <li>SQLite tasarım ve yönetim</li>
+            <li>Room Database (Android)</li>
+            <li>CoreData (iOS)</li>
+            <li>Veri senkronizasyonu</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">UI/UX Tasarım Danışmanlığı</h3>
+          <p class="service-desc">Kullanıcı dostu ve modern mobil arayüzler için tasarım desteği.</p>
+          <ul class="service-list">
+            <li>Figma ile prototip</li>
+            <li>HIG (Apple) uyumluluk</li>
+            <li>Material Design (Android)</li>
+            <li>Kullanıcı akış tasarımı</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"></div>
+          <h3 class="service-title">Öğrenci Mentorlüğü</h3>
+          <p class="service-desc">Mobil geliştirmeye yeni başlayanlar için rehberlik ve kaynak paylaşımı.</p>
+          <ul class="service-list">
+            <li>Swift temelleri</li>
+            <li>Kotlin temelleri</li>
+            <li>Kaynak önerileri</li>
+            <li>Kod inceleme</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="gradient-bg reveal" style="text-align:center;margin-top:4rem;">
+        <p class="section-label">// Hazır mısınız?</p>
+        <h2 style="font-size:2rem;margin-bottom:1rem;">Birlikte Çalışalım!</h2>
+        <p style="color:var(--text-secondary);margin-bottom:2rem;max-width:450px;margin-left:auto;margin-right:auto;">
+          Projeniz için ihtiyaç duyduğunuz destekle ilgili benimle iletişime geçin.
+        </p>
+        <a href="contact.html" class="btn btn-primary" style="font-size:1rem;padding:0.9rem 2.5rem;">İletişime Geç </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Murat Akıllıca</h3>
+          <p>Swift ve Kotlin ile mobil uygulama geliştiren bir geliştiriciyim.</p>
+          <div class="social-links" style="margin-top:1rem;">
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="proje.html">Projeler</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Hizmetler</h4>
+          <ul>
+            <li><a href="#">iOS Geliştirme</a></li>
+            <li><a href="#">Android Geliştirme</a></li>
+            <li><a href="#">Firebase Entegrasyonu</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>©2026 Murat Akıllıca</span>
+        <span>Made in Turkey</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Yukarı çık"><svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15" stroke="white" stroke-width="2.5" fill="none"/></svg></button>
+  <div class="notification"></div>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca Blog – Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://muratakillica.com/pages/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muratakillica.com/pages/blog.html">
+  <meta property="og:title" content="Blog – Murat Akıllıca">
+  <meta property="og:description" content="Murat Akıllıca Blog – Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta property="og:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog – Murat Akıllıca">
+  <meta name="twitter:description" content="Mobil geliştirme, Swift, Kotlin ve yazılım dünyasına dair yazılar.">
+  <meta name="twitter:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <title>Blog – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="vesaire.html">Hizmetler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <a href="login.html" class="btn btn-outline btn-login" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Giriş Yap</a>
+        <a href="register.html" class="btn btn-primary btn-register" style="padding:0.45rem 0.9rem;font-size:0.8rem;">Kayıt Ol</a>
+        <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
+          <div class="user-info-badge"><div class="user-avatar"></div><span class="user-name" style="font-family:var(--font-mono);font-size:0.78rem;"></span></div>
+          <button onclick="Auth.logout()" class="btn btn-ghost" style="padding:0.45rem 1rem;font-size:0.8rem;"><i class="fa-solid fa-right-from-bracket" style="margin-right:0.3rem;"></i>Çıkış</button>
+        </div>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero__bg" style="position:absolute;inset:0;">
+      <div class="hero__orb hero__orb--1" style="opacity:0.2;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label">// Notlarım & Öğrendiklerim</p>
+      <h1 class="page-hero__title">Blog</h1>
+      <p class="page-hero__desc">Mobil geliştirme yolculuğumda öğrendiklerimi ve deneyimlerimi paylaşıyorum.</p>
+    </div>
+  </div>
+
+  <!-- KATEGORİ FİLTRELEME -->
+  <section style="padding:2rem 0 0;">
+    <div class="container">
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;" id="catBtns">
+        <button class="btn btn-primary cat-btn active" data-cat="all">Tümü</button>
+        <button class="btn btn-ghost cat-btn" data-cat="swift">Swift</button>
+        <button class="btn btn-ghost cat-btn" data-cat="kotlin">Kotlin</button>
+        <button class="btn btn-ghost cat-btn" data-cat="firebase">Firebase</button>
+        <button class="btn btn-ghost cat-btn" data-cat="veritabani">Veritabanı</button>
+        <button class="btn btn-ghost cat-btn" data-cat="genel">Genel</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG YAZILARI -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid" id="blogGrid">
+
+        <div class="blog-card reveal" data-cat="swift">
+          <div class="blog-card__date">Ocak 2026</div>
+          <span class="blog-card__category">Swift</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">Swift ile İlk iOS Uygulamamı Yaparken Öğrendiklerim</h3>
+          <p class="blog-card__excerpt">Sıfırdan Swift öğrenme sürecim, karşılaştığım zorluklar, kaynaklar ve nelerden öğrendim.</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card reveal" data-cat="veritabani">
+          <div class="blog-card__date">Aralık 2025</div>
+          <span class="blog-card__category">Veritabanı</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">Firebase vs SQLite: Mobil Uygulamalarda Doğru Seçim</h3>
+          <p class="blog-card__excerpt">İki farklı veritabanı yaklaşımını karşılaştırdım. Ne zaman hangisini kullanmalı?</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card reveal" data-cat="kotlin">
+          <div class="blog-card__date">Kasım 2025</div>
+          <span class="blog-card__category">Kotlin</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">Kotlin ile Android Geliştirmeye Başlamak</h3>
+          <p class="blog-card__excerpt">Android Studio kurulumundan ilk Kotlin uygulamasına kadar adım adım rehber.</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card reveal" data-cat="firebase">
+          <div class="blog-card__date">Ekim 2025</div>
+          <span class="blog-card__category">Firebase</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">Firebase Authentication ile Kullanıcı Girişi</h3>
+          <p class="blog-card__excerpt">iOS uygulamama Firebase Auth entegre ederken öğrendiğim püf noktalar ve dikkat edilecekler.</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card reveal" data-cat="swift">
+          <div class="blog-card__date">Eylül 2025</div>
+          <span class="blog-card__category">Swift</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">SwiftUI vs UIKit: Hangisini Öğrenmeliyim?</h3>
+          <p class="blog-card__excerpt">Yeni başlayanlar için iki framework arasındaki farklar ve hangi durumda hangisini tercih etmeli.</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+        <div class="blog-card reveal" data-cat="genel">
+          <div class="blog-card__date">Ağustos 2025</div>
+          <span class="blog-card__category">Genel</span>
+          <h3 class="blog-card__title" style="margin-top:0.75rem;">Neden Mobil Geliştirici Olmak İstiyorum?</h3>
+          <p class="blog-card__excerpt">Mobil geliştirme yolculuğuma nasıl başladığım, motivasyonum ve bu alana neden yöneldiğim.</p>
+          <a href="#" class="btn btn-ghost" style="font-size:0.8rem;padding:0.45rem 1rem;margin-top:0.5rem;">Devamını Oku →</a>
+        </div>
+
+      </div>
+
+      <!-- GİRİŞ YAPANLAR İÇİN YORUM BÖLÜMÜ -->
+      <div id="commentSection" style="margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto;" class="reveal">
+        <div class="gradient-bg">
+          <h3 style="margin-bottom:0.5rem;">Yorumlar</h3>
+          <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:1.5rem;">Yorum yapmak için giriş yapmanız gerekmektedir.</p>
+          <div id="commentForm" style="display:none;">
+            <div class="form-group">
+              <label class="form-label">Yorumunuz</label>
+              <textarea class="form-textarea" placeholder="Düşüncelerinizi paylaşın..." rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary">Yorum Gönder <i class="fa-solid fa-comment" style="margin-left:0.35rem;"></i></button>
+          </div>
+          <div id="loginPrompt">
+            <a href="login.html" class="btn btn-primary">Giriş Yap →</a>
+            <a href="register.html" class="btn btn-outline" style="margin-left:0.75rem;">Kayıt Ol</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Murat Akıllıca</h3>
+          <p>Mobil geliştirme öğrencisi & teknoloji meraklısı.</p>
+          <div class="social-links" style="margin-top:1rem;">
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="proje.html">Projeler</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Kategoriler</h4>
+          <ul>
+            <li><a href="#">Swift</a></li>
+            <li><a href="#">Kotlin</a></li>
+            <li><a href="#">Firebase</a></li>
+            <li><a href="#">Veritabanı</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>©2026 Murat Akıllıca</span>
+        <span>Made in Turkey</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BLOG OKUMA MODALI -->
+  <div id="blogModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.82);backdrop-filter:blur(8px);overflow-y:auto;padding:1.5rem 1rem;">
+    <div style="max-width:700px;margin:2rem auto 3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:1.25rem;padding:2rem;position:relative;width:100%;box-sizing:border-box;">
+      <button onclick="closeBlogModal()" style="position:absolute;top:1rem;right:1rem;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);width:2rem;height:2rem;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;"><i class="fa-solid fa-xmark"></i></button>
+      <div id="blogModalContent"></div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Yukarı çık"><svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15" stroke="white" stroke-width="2.5" fill="none"/></svg></button>
+  <div class="notification"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // ===== BLOG YAZISI İÇERİKLERİ =====
+    const blogPosts = [
+      {
+        date: 'Ocak 2026', cat: 'Swift',
+        title: 'Swift ile İlk iOS Uygulamamı Yaparken Öğrendiklerim',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Swift öğrenmeye karar verdiğimde nereden başlayacağımı bilmiyordum. Apple'ın kendi dokümantasyonu iyi bir başlangıç noktası oldu ama asıl öğrenme kendi projemi yaparken gerçekleşti.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Başlarken Yaptığım Hatalar</h4>
+          <p style="color:var(--text-secondary);margin-bottom:1rem;">İlk haftalarda her şeyi <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">ViewController</code> içine doldurmaya çalıştım. MVC mimarisini anlamadan önce kod karmaşasıyla ciddi vakit kaybettim.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Optionals ile Başa Çıkmak</h4>
+          <p style="color:var(--text-secondary);margin-bottom:1rem;">Swift'in en güçlü özelliklerinden biri olan optional'lar başta kafamı karıştırdı. <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">guard let</code> ve <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.85rem;">if let</code> kullanmayı öğrendikten sonra çok daha güvenli kod yazmaya başladım.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Kullandığım Kaynaklar</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;">
+            <li>Apple Developer Documentation</li>
+            <li>Hacking with Swift (Paul Hudson)</li>
+            <li>Swift Playgrounds uygulaması</li>
+            <li>YouTube – Sean Allen kanalı</li>
+          </ul>
+          <p style="color:var(--text-secondary);margin-top:1.25rem;">En önemli tavsiyem: küçük ama tamamlanmış bir proje yapın. Yarım bırakılan 10 projeden tamamlanan 1 proje çok daha değerli.</p>`
+      },
+      {
+        date: 'Aralık 2025', cat: 'Veritabanı',
+        title: 'Firebase vs SQLite: Mobil Uygulamalarda Doğru Seçim',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Chat uygulaması yaparken Firebase, görev yöneticisi yaparken SQLite kullandım. İkisini de deneyimledikten sonra aralarındaki temel farkları şöyle özetleyebilirim:</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">SQLite — Ne Zaman Kullanmalı?</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>İnternet bağlantısı gerektirmeyen uygulamalar</li>
+            <li>Kullanıcıya özel yerel veriler (notlar, görevler)</li>
+            <li>Hızlı ve offline-first deneyim istiyorsanız</li>
+            <li>Backend maliyeti istemiyorsanız</li>
+          </ul>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Firebase — Ne Zaman Kullanmalı?</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Gerçek zamanlı veri senkronizasyonu (chat, canlı skorlar)</li>
+            <li>Birden fazla kullanıcı aynı veriye erişecekse</li>
+            <li>Kullanıcı kimlik doğrulaması gerekiyorsa</li>
+            <li>Push notification istiyorsanız</li>
+          </ul>
+          <p style="color:var(--text-secondary);">Çoğu uygulamada ikisini birlikte kullanmak en mantıklısı: kullanıcı tercihleri SQLite'ta, paylaşılan içerik Firebase'de.</p>`
+      },
+      {
+        date: 'Kasım 2025', cat: 'Kotlin',
+        title: 'Kotlin ile Android Geliştirmeye Başlamak',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Android Studio indirip ilk kez açtığımda gördüğüm arayüz biraz ürkütücüydü. Ama bir süre sonra her şeyin yerli yerine oturduğunu fark ettim.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Kurulum</h4>
+          <p style="color:var(--text-secondary);margin-bottom:1rem;">Android Studio'yu indirip kuruyorsunuz. İlk açılışta SDK indirmesi yapıyor, biraz bekleyin. Emülatör yerine gerçek cihaz kullanmanızı öneririm — çok daha hızlı.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Kotlin'in Güzel Yanları</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Null safety — Swift gibi güvenli tip sistemi</li>
+            <li>Extension fonksiyonlar — mevcut sınıfları genişletmek çok kolay</li>
+            <li>Coroutines — async kod yazmak artık kâbus değil</li>
+            <li>Data class — tek satırda model oluşturma</li>
+          </ul>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">İlk Proje Önerisi</h4>
+          <p style="color:var(--text-secondary);">RecyclerView ile liste gösteren basit bir uygulama yapın. Bu, Android'in temel yapısını öğrenmek için mükemmel bir başlangıç noktası.</p>`
+      },
+      {
+        date: 'Ekim 2025', cat: 'Firebase',
+        title: 'Firebase Authentication ile Kullanıcı Girişi',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Firebase Auth, kendi auth sistemini sıfırdan yazmak yerine dakikalar içinde çalışan bir kullanıcı girişi sistemi kurmanızı sağlıyor.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Kurulum Adımları</h4>
+          <ol style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Firebase Console'da proje oluşturun</li>
+            <li>iOS/Android uygulamanızı ekleyin, config dosyasını indirin</li>
+            <li>Firebase SDK'yı projenize ekleyin (CocoaPods / Gradle)</li>
+            <li>Email/Password auth'u konsol üzerinden aktif edin</li>
+          </ol>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Dikkat Edilecekler</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;">
+            <li>GoogleService-Info.plist dosyasını asla GitHub'a yüklemeyin</li>
+            <li>Firestore security rules'u mutlaka yapılandırın</li>
+            <li>Auth state listener kullanın — kullanıcı durumunu takip etmek için</li>
+          </ul>`
+      },
+      {
+        date: 'Eylül 2025', cat: 'Swift',
+        title: 'SwiftUI vs UIKit: Hangisini Öğrenmeliyim?',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Bu soru Swift öğrenen herkesi zorluyor. Kısa cevap: <strong style="color:var(--text-primary);">ikisini de temel düzeyde bilin, ama SwiftUI ile başlayın.</strong></p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">SwiftUI'nin Avantajları</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Daha az kod, daha okunabilir yapı</li>
+            <li>Canlı önizleme (Preview) ile anında sonuç görme</li>
+            <li>Apple'ın geleceğe yatırım yaptığı framework</li>
+            <li>Declarative syntax — ne göstermek istediğinizi söylüyorsunuz</li>
+          </ul>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">UIKit Hâlâ Neden Önemli?</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Mevcut büyük projelerin çoğu UIKit kullanıyor</li>
+            <li>Daha karmaşık animasyonlar ve özel kontroller için gerekli</li>
+            <li>İş ilanlarında hâlâ çok aranıyor</li>
+          </ul>
+          <p style="color:var(--text-secondary);">Tavsiyem: SwiftUI ile başlayın, bir noktada UIKit öğrenmek zorunda kalacaksınız. Ama giriş için SwiftUI çok daha keyifli.</p>`
+      },
+      {
+        date: 'Ağustos 2025', cat: 'Genel',
+        title: 'Neden Mobil Geliştirici Olmak İstiyorum?',
+        content: `
+          <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Her gün kullandığım uygulamaların nasıl yapıldığını merak ediyordum. Bir gün "öğreneyim" dedim ve o günden beri durduramıyorum kendimi.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Başlangıç Noktam</h4>
+          <p style="color:var(--text-secondary);margin-bottom:1rem;">Bir arkadaşımın yaptığı basit bir iOS uygulaması gördüm. "Ben de yapabilir miyim?" sorusu ile başladı her şey. İlk "Hello World" uygulamasını çalıştırdığımda hissettiğim o his — tarif edemiyorum.</p>
+          <h4 style="margin:1.5rem 0 0.75rem;font-family:var(--font-display);">Motivasyonum</h4>
+          <ul style="color:var(--text-secondary);padding-left:1.25rem;line-height:2.2;margin-bottom:1rem;">
+            <li>Milyonlarca insanın kullanabileceği bir şey üretme fikri</li>
+            <li>Her platformda (iOS & Android) çalışan uygulamalar yapabilmek</li>
+            <li>Problem çözmenin en yaratıcı yolu olduğunu düşünüyorum</li>
+          </ul>
+          <p style="color:var(--text-secondary);">Hâlâ öğreniyorum, hâlâ hata yapıyorum. Ama her gün bir önceki günden daha iyi olduğumu bilmek yeterli motivasyon.</p>`
+      }
+    ];
+
+    function openBlogModal(idx) {
+      const post = blogPosts[idx];
+      if (!post) return;
+      document.getElementById('blogModalContent').innerHTML = `
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+          <span class="blog-card__category">${post.cat}</span>
+          <span style="color:var(--text-muted);font-size:0.82rem;">${post.date}</span>
+        </div>
+        <h2 style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;line-height:1.25;">${post.title}</h2>
+        ${post.content}
+      `;
+      document.getElementById('blogModal').style.display = 'block';
+      
+    }
+
+    function closeBlogModal() {
+      document.getElementById('blogModal').style.display = 'none';
+      
+    }
+
+    // Overlay'e tıklanınca kapat
+    document.getElementById('blogModal').addEventListener('click', function(e) {
+      if (e.target === this) closeBlogModal();
+    });
+
+    // Devamını Oku butonlarını bağla
+    document.querySelectorAll('.blog-card').forEach((card, idx) => {
+      const btn = card.querySelector('.btn');
+      if (btn) btn.addEventListener('click', (e) => { e.preventDefault(); openBlogModal(idx); });
+    });
+
+    // Kategori filtresi
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.className = 'btn btn-ghost cat-btn');
+        btn.className = 'btn btn-primary cat-btn active';
+        const cat = btn.getAttribute('data-cat');
+        document.querySelectorAll('.blog-card').forEach(card => {
+          const c = card.getAttribute('data-cat') || '';
+          card.style.display = (cat === 'all' || c === cat) ? '' : 'none';
+        });
+      });
+    });
+
+    // Giriş kontrolü
+    const user = Auth.getUser();
+    if (user) {
+      document.getElementById('loginPrompt').style.display = 'none';
+      document.getElementById('commentForm').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca Portfolio – Kayıt Ol">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Kayıt Ol – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="contact.html">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span>
+          <span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div style="position:fixed;inset:0;z-index:0;pointer-events:none;">
+    <div class="hero__orb hero__orb--1" style="opacity:0.15;"></div>
+    <div class="hero__orb hero__orb--2" style="opacity:0.1;"></div>
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-card" style="position:relative;z-index:1;max-width:480px;">
+      <div class="auth-card__header">
+        <div class="auth-card__logo">MA.</div>
+        <h2 class="auth-card__title">Kayıt Olun</h2>
+        <p class="auth-card__sub">Yeni bir hesap oluşturun</p>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label class="form-label">Ad Soyad <span style="color:#ef4444;">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="Adınız Soyadınız" required autocomplete="name" minlength="2">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">E-posta Adresi <span style="color:#ef4444;">*</span></label>
+          <input type="email" name="email" class="form-input" placeholder="ornek@mail.com" required autocomplete="email">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Şifre <span style="color:#ef4444;">*</span></label>
+          <div style="position:relative;">
+            <input type="password" name="password" id="regPassInput" class="form-input" placeholder="En az 6 karakter" required autocomplete="new-password" style="padding-right:3rem;">
+            <button type="button" onclick="togglePass('regPassInput','regPassIcon')"
+              style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;color:var(--text-muted);">
+              <i id="regPassIcon" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <div id="strengthBar" style="height:4px;background:var(--bg-secondary);border-radius:2px;margin-top:0.5rem;overflow:hidden;">
+            <div id="strengthFill" style="height:100%;width:0;transition:width 0.3s,background 0.3s;border-radius:2px;"></div>
+          </div>
+          <div id="strengthText" style="font-size:0.72rem;color:var(--text-muted);margin-top:0.3rem;font-family:'JetBrains Mono',monospace;"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Şifre Tekrar <span style="color:#ef4444;">*</span></label>
+          <div style="position:relative;">
+            <input type="password" name="password2" id="regPass2Input" class="form-input" placeholder="Şifreyi tekrar girin" required autocomplete="new-password" style="padding-right:3rem;">
+            <button type="button" onclick="togglePass('regPass2Input','regPass2Icon')"
+              style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;color:var(--text-muted);">
+              <i id="regPass2Icon" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.855rem;cursor:pointer;line-height:1.55;">
+            <input type="checkbox" name="terms" required style="accent-color:var(--accent);margin-top:3px;flex-shrink:0;">
+            <span>
+              <a href="#" style="color:var(--accent);">Kullanım koşullarını</a> ve
+              <a href="#" style="color:var(--accent);">gizlilik politikasını</a> okudum, kabul ediyorum.
+              <span style="color:#ef4444;"> *</span>
+            </span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.9rem;">
+          <i class="fa-solid fa-user-plus" style="margin-right:0.4rem;"></i> Kayıt Ol
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Zaten hesabınız var mı? <a href="login.html">Giriş Yapın →</a>
+      </div>
+    </div>
+  </main>
+
+  <div class="notification"></div>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function togglePass(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon  = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fa-solid fa-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'fa-solid fa-eye';
+      }
+    }
+
+    // Şifre gücü göstergesi
+    document.getElementById('regPassInput').addEventListener('input', function () {
+      const val = this.value;
+      const fill = document.getElementById('strengthFill');
+      const text = document.getElementById('strengthText');
+      let strength = 0;
+      if (val.length >= 6)  strength++;
+      if (val.length >= 10) strength++;
+      if (/[A-Z]/.test(val)) strength++;
+      if (/[0-9]/.test(val)) strength++;
+      if (/[^A-Za-z0-9]/.test(val)) strength++;
+      const colors = ['', '#ef4444', '#f97316', '#facc15', '#22c55e', '#16a34a'];
+      const labels = ['', 'Çok Zayıf', 'Zayıf', 'Orta', 'Güçlü', 'Çok Güçlü'];
+      fill.style.width      = (strength * 20) + '%';
+      fill.style.background = colors[strength] || '';
+      text.textContent      = val.length > 0 ? 'Şifre güvenliği: ' + (labels[strength] || '') : '';
+      text.style.color      = colors[strength] || '';
+    });
+
+    if (Auth.isLoggedIn()) window.location.href = '../index.html';
+  </script>
+</body>
+</html>

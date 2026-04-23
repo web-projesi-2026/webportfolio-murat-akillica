@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Murat Akıllıca ile iletişime geçin – proje teklifleri, iş birliği ve sorularınız için.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://muratakillica.com/pages/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muratakillica.com/pages/contact.html">
+  <meta property="og:title" content="İletişim – Murat Akıllıca">
+  <meta property="og:description" content="Murat Akıllıca ile iletişime geçin – proje teklifleri, iş birliği ve sorularınız için.">
+  <meta property="og:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="İletişim – Murat Akıllıca">
+  <meta name="twitter:description" content="Proje teklifleri, iş birliği ve sorularınız için iletişime geçin.">
+  <meta name="twitter:image" content="https://muratakillica.com/assets/img/og-cover.jpg">
+  <title>İletişim – Murat Akıllıca</title>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
 
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">MA.</a>
+      <nav class="navbar__nav">
+        <ul>
+          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="about.html">Hakkımda</a></li>
+          <li><a href="proje.html">Projeler</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="vesaire.html">Hizmetler</a></li>
+          <li><a href="contact.html" class="active">İletişim</a></li>
+        </ul>
+      </nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" title="Tema değiştir">
+          <span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+        <a href="login.html" class="btn btn-outline btn-login" style="padding:0.5rem 1rem;font-size:0.82rem;">Giriş Yap</a>
+        <a href="register.html" class="btn btn-primary btn-register" style="padding:0.5rem 1rem;font-size:0.82rem;">Kayıt Ol</a>
+        <div class="user-menu" style="display:none;align-items:center;gap:0.75rem;">
+          <div class="user-info-badge"><div class="user-avatar"></div><span class="user-name" style="font-size:0.875rem;font-weight:600;"></span></div>
+          <button onclick="Auth.logout()" class="btn btn-ghost" style="padding:0.45rem 1rem;font-size:0.8rem;"><i class="fa-solid fa-right-from-bracket" style="margin-right:0.3rem;"></i>Çıkış</button>
+        </div>
+        <div class="navbar__hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="hero__bg" style="position:absolute;inset:0;">
+      <div class="hero__orb hero__orb--1" style="opacity:0.2;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:1;">
+      <p class="section-label">// Bana Ulaşın</p>
+      <h1 class="page-hero__title">İletişim</h1>
+      <p class="page-hero__desc">
+        İşbirliği, sorularınız veya sadece merhaba demek için yazabilirsiniz!
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- İLETİŞİM BİLGİLERİ -->
+        <div class="reveal">
+          <h3 style="font-size:1.4rem;margin-bottom:0.75rem;">Hadi Konuşalım!</h3>
+          <p style="color:var(--text-secondary);margin-bottom:2rem;font-size:0.95rem;">
+            Mobil uygulama fikirleri, işbirliği önerileri veya sadece selam vermek için
+            benimle iletişime geçebilirsiniz. Genellikle 24 saat içinde yanıt veririm.
+          </p>
+
+          <div class="contact-links">
+
+            <a href="mailto:muratakillica@gmail.com" class="contact-link">
+              <div class="contact-link__icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-link__info">
+                <div class="contact-link__label">E-posta</div>
+                <div class="contact-link__value">muratakillica@gmail.com</div>
+              </div>
+              <span style="color:var(--text-muted);">→</span>
+            </a>
+
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="contact-link">
+              <div class="contact-link__icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-link__info">
+                <div class="contact-link__label">GitHub</div>
+                <div class="contact-link__value">github.com/muratttcan</div>
+              </div>
+              <span style="color:var(--text-muted);">→</span>
+            </a>
+
+            <a href="#" class="contact-link">
+              <div class="contact-link__icon">
+                <i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="contact-link__info">
+                <div class="contact-link__label">LinkedIn</div>
+                <div class="contact-link__value">linkedin.com/in/muratakillica</div>
+              </div>
+              <span style="color:var(--text-muted);">→</span>
+            </a>
+
+            <a href="#" class="contact-link">
+              <div class="contact-link__icon">
+                <i class="fa-brands fa-x-twitter"></i>
+              </div>
+              <div class="contact-link__info">
+                <div class="contact-link__label">Twitter / X</div>
+                <div class="contact-link__value">@muratakillica</div>
+              </div>
+              <span style="color:var(--text-muted);">→</span>
+            </a>
+
+          </div>
+
+          <div class="card" style="margin-top:1.75rem;">
+            <div style="font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--text-muted);margin-bottom:0.5rem;">DURUM</div>
+            <div style="display:flex;align-items:center;gap:0.5rem;">
+              <span style="width:10px;height:10px;background:#22c55e;border-radius:50%;display:inline-block;animation:pulse 2s infinite;"></span>
+              <span style="font-weight:600;">Yeni fırsatlara açık</span>
+            </div>
+            <p style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.5rem;">
+              Öğrenci projeleri ve işbirliği teklifleri için müsaitim.
+            </p>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="card reveal">
+          <h3 style="font-size:1.2rem;margin-bottom:1.5rem;">Mesaj <i class="fa-solid fa-paper-plane" style="margin-right:0.35rem;"></i> Gönder</h3>
+          <form id="contactForm" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label class="form-label">Ad Soyad *</label>
+                <input type="text" name="name" class="form-input" placeholder="Adınız" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-posta *</label>
+                <input type="email" name="email" class="form-input" placeholder="ornek@mail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Konu</label>
+              <select name="subject" class="form-select">
+                <option value="">Konu seçin</option>
+                <option value="isbirligi">İşbirliği Teklifi</option>
+                <option value="proje">Proje Hakkında</option>
+                <option value="soru">Genel Soru</option>
+                <option value="diger">Diğer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mesajınız *</label>
+              <textarea name="message" class="form-textarea" placeholder="Mesajınızı buraya yazın..." required rows="5"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <i class="fa-solid fa-paper-plane" style="margin-right:0.35rem;"></i> Gönder
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+    }
+  </style>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Murat Akıllıca</h3>
+          <p>Swift ve Kotlin öğrenerek iOS & Android geliştirme dünyasına adım atan bir geliştiriciyim.</p>
+          <div class="social-links" style="margin-top:1rem;">
+            <a href="https://github.com/muratttcan" target="_blank" rel="noopener" class="social-link"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Sayfalar</h4>
+          <ul>
+            <li><a href="../index.html">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="proje.html">Projeler</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Bağlantılar</h4>
+          <ul>
+            <li><a href="https://github.com/muratttcan" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>©2026 Murat Akıllıca</span>
+        <span>Made in Turkey</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Yukarı çık">
+    <svg viewBox="0 0 24 24">
+      <polyline points="18,15 12,9 6,15" stroke="white" stroke-width="2.5" fill="none" />
+    </svg>
+  </button>
+  <div class="notification"></div>
+
+  <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
