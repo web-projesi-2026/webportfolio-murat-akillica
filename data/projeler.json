@@ -1,1 +1,99 @@
 
+[
+  {
+    "id": 1,
+    "baslik": "Görev Yöneticisi",
+    "aciklama": "SQLite kullanarak yerel depolama destekli iOS görev takip uygulaması. Kategori bazlı filtreleme, öncelik sıralaması ve istatistik ekranı içeriyor.",
+    "etiketler": ["Swift", "UIKit", "SQLite", "iOS"],
+    "kategoriler": ["ios", "sqlite"],
+    "durum": "Tamamlandı",
+    "durumBadge": "badge-success",
+    "platform": "iOS",
+    "platformIcon": "fa-brands fa-apple",
+    "platformBadge": "badge-info",
+    "githubUrl": "https://github.com/muratttcan",
+    "ozellikler": [
+      "Kategori bazlı görev yönetimi",
+      "Yerel SQLite depolama",
+      "Öncelik sıralaması ve filtreleme",
+      "Bildirim desteği"
+    ]
+  },
+  {
+    "id": 2,
+    "baslik": "Chat Uygulaması",
+    "aciklama": "Firebase Realtime Database ve Authentication kullanarak anlık mesajlaşma özellikli Android uygulaması. Profil fotoğrafı ve grup sohbeti desteği.",
+    "etiketler": ["Kotlin", "Firebase", "Android"],
+    "kategoriler": ["android", "firebase"],
+    "durum": "Devam Ediyor",
+    "durumBadge": "badge-warning",
+    "platform": "Android",
+    "platformIcon": "fa-brands fa-android",
+    "platformBadge": "badge-accent",
+    "githubUrl": "https://github.com/muratttcan",
+    "ozellikler": [
+      "Anlık mesajlaşma",
+      "E-posta ile kayıt/giriş",
+      "Profil fotoğrafı yükleme",
+      "Online/offline durumu"
+    ]
+  },
+  {
+    "id": 3,
+    "baslik": "Kitap Takip",
+    "aciklama": "SwiftUI ile geliştirilmiş, Open Library API entegrasyonlu kitap okuma takip uygulaması. Okunmuş / okunacak listesi, puan verme özelliği.",
+    "etiketler": ["Swift", "SwiftUI", "REST API"],
+    "kategoriler": ["ios"],
+    "durum": "Tamamlandı",
+    "durumBadge": "badge-success",
+    "platform": "iOS",
+    "platformIcon": "fa-brands fa-apple",
+    "platformBadge": "badge-info",
+    "githubUrl": "https://github.com/muratttcan",
+    "ozellikler": [
+      "Open Library API entegrasyonu",
+      "Okunmuş / okunacak listesi",
+      "Puan verme sistemi",
+      "SwiftUI arayüzü"
+    ]
+  },
+  {
+    "id": 4,
+    "baslik": "Bütçe Takip",
+    "aciklama": "Room Database (SQLite üzerine) kullanarak gelir-gider takibi yapan Android uygulaması. Grafik ve raporlama özellikleri.",
+    "etiketler": ["Kotlin", "Room DB", "Android"],
+    "kategoriler": ["android", "sqlite"],
+    "durum": "Planlanan",
+    "durumBadge": "badge-warning",
+    "platform": "Android",
+    "platformIcon": "fa-brands fa-android",
+    "platformBadge": "badge-accent",
+    "githubUrl": "https://github.com/muratttcan",
+    "ozellikler": [
+      "Gelir-gider takibi",
+      "Room Database (SQLite)",
+      "Grafik ve raporlama",
+      "Kategori bazlı analiz"
+    ]
+  },
+  {
+    "id": 5,
+    "baslik": "Spor Takip",
+    "aciklama": "HealthKit entegrasyonlu ve Firebase bulut senkronizasyonlu iOS fitness uygulaması. Günlük hedef takibi ve motivasyon bildirimleri.",
+    "etiketler": ["Swift", "Firebase", "HealthKit"],
+    "kategoriler": ["ios", "firebase"],
+    "durum": "Planlanan",
+    "durumBadge": "badge-warning",
+    "platform": "iOS",
+    "platformIcon": "fa-brands fa-apple",
+    "platformBadge": "badge-info",
+    "githubUrl": "https://github.com/muratttcan",
+    "ozellikler": [
+      "HealthKit entegrasyonu",
+      "Firebase bulut senkronizasyonu",
+      "Günlük hedef takibi",
+      "Motivasyon bildirimleri"
+    ]
+  }
+]
+
